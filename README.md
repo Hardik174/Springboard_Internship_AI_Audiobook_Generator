@@ -6,13 +6,13 @@ The system extracts text, enriches it for narration using an AI language model, 
 🚀 Features
 
 ✔ Automatic text extraction from book files
-✔ Chunk-wise processing to handle large documents
+✔ Chunk-wise processing for large documents
 ✔ Context-aware narration enrichment using AI
-✔ Strict meaning preservation — no summarization or hallucination
+✔ No summarization or hallucination — meaning is preserved
 ✔ Natural audiobook-style narration
-✔ High-quality AI TTS synthesis
-✔ Supports long-form content across domains
-✔ Modular & extendable pipeline
+✔ High-quality AI speech synthesis
+✔ Modular design — easy to extend and customize
+✔ Works across any content domain
 
 🧠 How It Works
 
@@ -23,32 +23,26 @@ Raw text is extracted from the input book/document.
 The content is split into model-friendly chunks while preserving sentence structure.
 
 3️⃣ Narration Enrichment via LLM
-Each chunk is passed through an AI model that:
-
-improves readability & flow
-
-adds audiobook-style tone
-
-preserves original meaning
+Each chunk is refined into audiobook-friendly narration while retaining meaning.
 
 4️⃣ Context Carryover
-A small excerpt from previous chunks is retained so narration stays consistent.
+A small excerpt from previous narration is passed forward to maintain flow.
 
 5️⃣ Text-to-Speech Conversion
-The enriched text is converted into human-like narration audio.
+The enriched text is converted into expressive speech.
 
-6️⃣ Final Audiobook Assembly
-All generated audio files are merged into a single audiobook.
+6️⃣ Audiobook Assembly
+All audio chunks are merged into one seamless audiobook file.
 
 🏗️ Tech Stack
 
 Python
 
-LLM (e.g., Mistral / Llama / LM Studio deployment)
+LLM (e.g., Mistral / Llama / LM Studio)
 
 TTS Engine (e.g., Sarvam AI, Coqui, etc.)
 
-Audio processing — Pydub / FFmpeg
+Audio Processing — Pydub / FFmpeg
 
 📂 Project Structure
 AI-Audiobook-Generator/
@@ -66,24 +60,30 @@ AI-Audiobook-Generator/
 └── README.md
 
 ⚙️ Setup & Installation
-1️⃣ Clone the repo
+1️⃣ Clone the repository
 git clone https://github.com/your-username/ai-audiobook-generator.git
 cd ai-audiobook-generator
 
-2️⃣ Create & activate environment
+2️⃣ Create and activate environment
 conda create -n audiobook python=3.10
 conda activate audiobook
 
 3️⃣ Install dependencies
 pip install -r requirements.txt
 
-4️⃣ Install FFmpeg (required for audio)
+4️⃣ Install FFmpeg
 
-Windows → download from ffmpeg.org & add to PATH
+Windows: Download from https://ffmpeg.org
+ and add to PATH
 
-Mac → brew install ffmpeg
+Mac:
 
-Linux → sudo apt install ffmpeg
+brew install ffmpeg
+
+
+Linux:
+
+sudo apt install ffmpeg
 
 ▶️ Usage
 Step 1 — Extract Text
@@ -93,7 +93,7 @@ extract_text("book.pdf", "extracted_text.md")
 Step 2 — Generate Enriched Narration
 python audiobook_api.py
 
-Step 3 — Convert to Speech & Merge
+Step 3 — Convert Text to Speech & Merge
 python TTS_Module.py
 
 
@@ -103,34 +103,30 @@ output_audio/final_audiobook.wav
 
 📌 Key Design Principles
 
-✔ Do not summarize
-✔ Preserve original meaning
-✔ Maintain storytelling flow
-✔ Keep narration enjoyable & natural
-✔ Support long-form listening
+✔ No summarization
+✔ No hallucinations
+✔ Meaning preserved
+✔ Natural narration flow
+✔ Ready for long-form listening
 
-🔍 Example Use Cases
+🔍 Use Cases
 
 🎙 Audiobook creation
-📚 Accessibility for visually-impaired users
-🏫 Education & e-learning
-🎓 Research papers to voice
-📜 Long-form articles & documentation
+📚 Accessibility support
+🏫 E-learning
+🎓 Research narration
+📜 Long-form article listening
 
 🧪 Future Enhancements
 
-🔹 Speaker selection & voice cloning
-🔹 Multi-language support
-🔹 Background music & soundscapes
-🔹 UI dashboard
-🔹 Cloud deployment pipeline
-🔹 RAG-based context enhancement
-
-🤝 Contributions
-
-Pull requests are welcome!
-If you’d like to collaborate, improve code, or add features — feel free to contribute.
+🔹 Voice cloning
+🔹 Multi-speaker support
+🔹 Multi-language TTS
+🔹 Background ambience/music
+🔹 Web dashboard
+🔹 Cloud deployment
+🔹 RAG-assisted narration continuity
 
 📜 License
 
-MIT License — free to use & modify.
+This project is licensed under the MIT License.
